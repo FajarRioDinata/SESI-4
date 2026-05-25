@@ -198,7 +198,8 @@
             🔹 <code>@override</code> untuk override method</p>
             <pre><code>//nama:fajar rio dinata 
 //nim:251410025
-//kelas:SI2Aclass Hewan {  
+//kelas:SI2A
+class Hewan {  
   void bersuara() => print('...'); 
 }  
 class Kucing extends Hewan {  
@@ -226,7 +227,8 @@ class Kucing extends Hewan {
             <p>📌 Referensi tipe parent dapat menampung objek child.</p>
             <pre><code>//nama:fajar rio dinata 
 //nim:251410025
-//kelas:SI2Aclass Bentuk {
+//kelas:SI2A
+class Bentuk {
 void gambar() => print('Menggambar bentuk');
 }
 class Lingkaran extends Bentuk {
@@ -267,7 +269,8 @@ bentuk2.gambar(); // Output: Menggambar persegi
             <p><strong>is</strong> : Mengecek tipe objek &nbsp;|&nbsp; <strong>as</strong> : Casting tipe objek</p>
             <pre><code>//nama:fajar rio dinata 
 //nim:251410025
-//kelas:SI2Aclass Kendaraan {}
+//kelas:SI2A
+class Kendaraan {}
 class Mobil extends Kendaraan {
 void klakson() => print('Tin!');
 }
@@ -308,7 +311,8 @@ void main() {
             <p>🔹 Tidak bisa diinstansiasi langsung.<br>🔹 Dapat memiliki method abstract (tanpa implementasi) dan concrete.</p>
             <pre><code>//nama:fajar rio dinata 
 //nim:251410025
-//kelas:SI2Aabstract class Kendaraan {
+//kelas:SI2A
+abstract class Kendaraan {
   String? merk;  // Field concrete
   
   void start();  // Method abstract
@@ -334,7 +338,8 @@ class Mobil extends Kendaraan {
             <p>Method tanpa body, harus di-override di subclass.</p>
             <pre><code>//nama:fajar rio dinata 
 //nim:251410025
-//kelas:SI2Aabstract class AlatMusik {
+//kelas:SI2A
+abstract class AlatMusik {
   void mainkan(); // Abstract method
 
   void info() {
@@ -359,7 +364,8 @@ class Gitar extends AlatMusik {
             <p>Sejak Dart 3.0: <code>interface class</code>. Gunakan <code>implements</code> untuk mengimplementasi kontrak.</p>
             <pre><code>//nama:fajar rio dinata 
 //nim:251410025
-//kelas:SI2Ainterface class Flyable {
+//kelas:SI2A
+interface class Flyable {
   void terbang() => print('Terbang...');
 }
 
@@ -398,7 +404,8 @@ class Plane implements Flyable {
             <p>Static member adalah properti/method milik class itu sendiri, diakses via nama class. Berguna untuk utility class.</p>
             <pre><code>//nama:fajar rio dinata 
 //nim:251410025
-//kelas:SI2Aclass MathUtils {
+//kelas:SI2A
+class MathUtils {
 static double pi = 3.14;
 static int add(int x, int y) {
 return x + y;
@@ -419,7 +426,8 @@ print('Result : ${MathUtils.add(10, 20)}');
             <p></p>
             <pre><code>//nama:fajar rio dinata 
 //nim:251410025
-//kelas:SI2Aabstract class MetodePembayaran {
+//kelas:SI2A
+abstract class MetodePembayaran {
   void bayar(double jumlah);
 }
 
@@ -444,7 +452,8 @@ class EWallet implements MetodePembayaran {
         <div class="slide-content">
             <pre><code>//nama:fajar rio dinata 
 //nim:251410025
-//kelas:SI2A abstract class Bentuk {
+//kelas:SI2A 
+abstract class Bentuk {
   double hitungLuas();
   double hitungKeliling();
   
@@ -518,7 +527,8 @@ class Lingkaran implements Bentuk {
             • Class implementasi: <code>AudioPlayer</code>, <code>VideoPlayer</code></p>
             <pre><code>//nama:fajar rio dinata 
 //nim:251410025
-//kelas:SI2A abstract class MediaPlayer { void play(); }
+//kelas:SI2A
+abstract class MediaPlayer { void play(); }
 interface class Playable { void play(); }
 interface class Pausable { void pause(); }
 
@@ -548,7 +558,8 @@ void main() {
         <div class="slide-content">
             <pre><code>//nama:fajar rio dinata 
 //nim:251410025
-//kelas:SI2A abstract class Pekerja {
+//kelas:SI2A
+abstract class Pekerja {
   void bekerja();
 }
 
@@ -575,7 +586,8 @@ void main() {
         <div class="slide-content">
             <pre><code>//nama:fajar rio dinata 
 //nim:251410025
-//kelas:SI2A class Komputer {
+//kelas:SI2A
+class Komputer {
   void boot() => print('Booting system...');
 }
 interface class Kamera {
