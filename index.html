@@ -1,1 +1,529 @@
+Berikut adalah kode HTML yang menampilkan materi presentasi "Polimorfisme dan Abstraksi" berdasarkan file slide yang diberikan, dengan desain yang modern dan responsif.
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Pemrograman Berorientasi Objek: Polimorfisme & Abstraksi (Dart)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            background: #f1f5f9;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: #0f172a;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Card / Slide style */
+        .slide-card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05), 0 2px 6px rgba(0,0,0,0.03);
+            overflow: hidden;
+            transition: transform 0.1s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .slide-header {
+            background: #1e293b;
+            padding: 1rem 2rem;
+            border-bottom: 3px solid #3b82f6;
+        }
+
+        .slide-header h2 {
+            color: white;
+            font-weight: 600;
+            font-size: 1.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        .slide-header .slide-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            background: #334155;
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            color: #cbd5e1;
+            margin-top: 8px;
+        }
+
+        .slide-content {
+            padding: 1.8rem 2rem;
+        }
+
+        /* elemen kode */
+        pre {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 1rem 1.2rem;
+            border-radius: 1rem;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin: 1rem 0;
+            border: 1px solid #334155;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #0f172a;
+        }
+
+        pre code {
+            background: transparent;
+            padding: 0;
+            color: inherit;
+        }
+
+        .highlight {
+            background: #fef9c3;
+            color: #0f172a;
+            font-weight: 500;
+        }
+
+        .grid-2cols {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .info-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem 1.2rem;
+            border-radius: 1rem;
+            margin: 1rem 0;
+        }
+
+        .badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            border-radius: 40px;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            background: #f8fafc;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #eef2ff;
+            font-weight: 600;
+        }
+
+        .footnote {
+            font-size: 0.85rem;
+            color: #475569;
+            margin-top: 1rem;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 1rem;
+        }
+
+        hr {
+            margin: 1rem 0;
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        @media (max-width: 680px) {
+            .slide-content {
+                padding: 1.2rem;
+            }
+            pre {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Judul utama sesi -->
+    <div class="slide-card">
+        <div class="slide-header" style="background: #0f172a;">
+            <h2>📘 Sesi 4: Polimorfisme dan Abstraksi</h2>
+            <div class="slide-tag">⏱️ Durasi: 200 menit | Total Slide: 16+</div>
+        </div>
+        <div class="slide-content">
+            <p style="font-size: 1.1rem;">Materi lengkap tentang polimorfisme, kelas abstrak, interface di Dart, serta studi kasus dan tantangan. Dikembangkan berdasarkan slide presentasi interaktif.</p>
+        </div>
+    </div>
+
+    <!-- Review Pewarisan (slide 2) -->
+    <div class="slide-card">
+        <div class="slide-header"><h2>1️⃣ Review Sesi 3 – Pewarisan</h2></div>
+        <div class="slide-content">
+            <p><strong>🔹 Inheritance</strong> menggunakan keyword <code>extends</code>. <code>super()</code> untuk memanggil constructor parent, <code>@override</code> untuk menimpa method.</p>
+            <pre><code>class Hewan {  
+  void bersuara() => print('...'); 
+}  
+class Kucing extends Hewan {  
+  @override  
+  void bersuara() => print('Meong');  
+}</code></pre>
+            <div class="info-box">✅ Pewarisan memungkinkan <strong>reusability</strong> dan membentuk hierarki kelas.</div>
+        </div>
+    </div>
+
+    <!-- Pengantar Polimorfisme -->
+    <div class="slide-card">
+        <div class="slide-header"><h2>🎭 Polimorfisme: Banyak Bentuk</h2></div>
+        <div class="slide-content">
+            <p><strong>Arti:</strong> <em>poly</em> (banyak) + <em>morph</em> (bentuk). Objek dari subclass dapat diperlakukan sebagai objek superclass.</p>
+            <p><span class="badge">Runtime polymorphism</span> di Dart melalui <strong>method overriding</strong> (compile-time overloading tidak didukung).</p>
+            <pre><code>class Bentuk { void gambar() => print('Menggambar bentuk'); }
+class Lingkaran extends Bentuk { @override void gambar() => print('Menggambar lingkaran'); }
+class Persegi extends Bentuk { @override void gambar() => print('Menggambar persegi'); }
+
+void main() {
+  Bentuk bentuk1 = Lingkaran();  // Polimorfisme
+  Bentuk bentuk2 = Persegi();
+  bentuk1.gambar(); // Menggambar lingkaran
+  bentuk2.gambar(); // Menggambar persegi
+}</code></pre>
+            <div class="grid-2cols">
+                <div>✔ Fleksibilitas</div><div>✔ Extensibility</div>
+                <div>✔ Code Reusability</div><div>✔ Maintainability</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Praktik 1 - List Hewan -->
+    <div class="slide-card">
+        <div class="slide-header"><h2>🐾 Praktik 1 – Polimorfisme dengan List</h2></div>
+        <div class="slide-content">
+            <p>Buat list <code>List&lt;Hewan&gt;</code> berisi berbagai subclass (<strong>Kucing, Anjing, Burung</strong>). Panggil method <code>bersuara()</code> secara polimorfik.</p>
+            <pre><code>abstract class Hewan { void bersuara(); }
+class Kucing extends Hewan { @override void bersuara() => print('Meong'); }
+class Anjing extends Hewan { @override void bersuara() => print('Guk guk'); }
+class Burung extends Hewan { @override void bersuara() => print('Cuit cuit'); }
+
+void main() {
+  List&lt;Hewan&gt; hewanList = [Kucing(), Anjing(), Burung()];
+  for (var h in hewanList) { h.bersuara(); }
+}</code></pre>
+        </div>
+    </div>
+
+    <!-- Abstraksi: abstract class & method -->
+    <div class="slide-card">
+        <div class="slide-header"><h2>🧩 Abstraksi: Menyembunyikan Detail Implementasi</h2></div>
+        <div class="slide-content">
+            <p><strong>Abstract class</strong> di Dart menggunakan keyword <code>abstract</code>. Bisa berisi method abstract (tanpa body) dan method konkrit.</p>
+            <pre><code>abstract class AlatMusik {
+  void mainkan(); // abstract method
+  void info() { print('Ini adalah alat musik'); } // concrete
+}
+
+class Gitar extends AlatMusik {
+  @override
+  void mainkan() => print('Jreng jreng...');
+}</code></pre>
+            <div class="info-box">🎯 Tujuan: Fokus pada "APA" bukan "BAGAIMANA", kontrak untuk subclass, fleksibilitas implementasi.</div>
+        </div>
+    </div>
+
+    <!-- Interface di Dart (implements) -->
+    <div class="slide-card">
+        <div class="slide-header"><h2>🔌 Interface di Dart (implements)</h2></div>
+        <div class="slide-content">
+            <p>Sejak Dart 3.0, <code>interface class</code> eksplisit. Gunakan <code>implements</code> untuk mengimplementasi kontrak. Bisa multiple implements.</p>
+            <pre><code>interface class Flyable {
+  void terbang() => print('Terbang...');
+}
+
+class Bird implements Flyable {
+  @override void terbang() => print('Burung terbang tinggi');
+}
+
+class Plane implements Flyable {
+  @override void terbang() => print('Pesawat terbang cepat');
+}</code></pre>
+        </div>
+    </div>
+
+    <!-- Perbedaan extends vs implements -->
+    <div class="slide-card">
+        <div class="slide-header"><h2>📊 extends vs implements</h2></div>
+        <div class="slide-content">
+            <table>
+                <thead><tr><th>Aspect</th><th>extends</th><th>implements</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Hubungan</td><td>"is-a" (pewarisan)</td><td>"can-do" (kontrak)</td></tr>
+                    <tr><td>Warisan kode</td><td>Mewarisi implementasi</td><td>Hanya kontrak, wajib implement ulang</td></tr>
+                    <tr><td>Method</td><td>Bisa override method konkrit/abstract</td><td>Semua method harus diimplementasi</td></tr>
+                    <tr><td>Multiple</td><td>Tidak (single inheritance)</td><td>Bisa (multiple implements)</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Static Members dan Method -->
+    <div class="slide-card">
+        <div class="slide-header"><h2>⚙️ Static Members & Method (Utility Class)</h2></div>
+        <div class="slide-content">
+            <p><strong>Static</strong> milik class itu sendiri, diakses via nama class. Berguna untuk konstanta atau fungsi utilitas.</p>
+            <pre><code>class MathUtils {
+  static double pi = 3.14;
+  static int add(int x, int y) => x + y;
+}
+
+void main() {
+  print('Nilai pi : ${MathUtils.pi}');
+  print('Hasil add : ${MathUtils.add(10, 20)}');
+}</code></pre>
+        </div>
+    </div>
+
+    <!-- Praktik 2 – Sistem Pembayaran -->
+    <div class="slide-card">
+        <div class="slide-header"><h2>💳 Praktik 2: Sistem Pembayaran (Polimorfisme + Interface)</h2></div>
+        <div class="slide-content">
+            <pre><code>abstract class MetodePembayaran {
+  void bayar(double jumlah);
+}
+
+class KartuKredit implements MetodePembayaran {
+  @override void bayar(double jumlah) => print('Bayar $jumlah dengan Kartu Kredit');
+}
+
+class EWallet implements MetodePembayaran {
+  @override void bayar(double jumlah) => print('Bayar $jumlah dengan E-Wallet');
+}
+
+class Tunai implements MetodePembayaran {
+  @override void bayar(double jumlah) => print('Bayar $jumlah dengan Tunai');
+}
+
+// Demonstrasi polimorfisme
+void prosesPembayaran(MetodePembayaran metode, double amount) {
+  metode.bayar(amount);
+}</code></pre>
+        </div>
+    </div>
+
+    <!-- Studi Kasus: Sistem Bentuk Geometri -->
+    <div class="slide-card">
+        <div class="slide-header"><h2>📐 Studi Kasus: Bentuk Geometri (Abstract / implements)</h2></div>
+        <div class="slide-content">
+            <pre><code>abstract class Bentuk {
+  double hitungLuas();
+  double hitungKeliling();
+  void info() {
+    print('Luas: ${hitungLuas()}, Keliling: ${hitungKeliling()}');
+  }
+}
+
+class Persegi implements Bentuk {
+  double sisi;
+  Persegi(this.sisi);
+  @override double hitungLuas() => sisi * sisi;
+  @override double hitungKeliling() => 4 * sisi;
+  @override void info() => print('Persegi sisi $sisi → Luas ${hitungLuas()}, Keliling ${hitungKeliling()}');
+}
+
+class Lingkaran implements Bentuk {
+  double radius;
+  Lingkaran(this.radius);
+  @override double hitungLuas() => 3.14 * radius * radius;
+  @override double hitungKeliling() => 2 * 3.14 * radius;
+  @override void info() => print('Lingkaran r=$radius → Luas ${hitungLuas()}, Keliling ${hitungKeliling()}');
+}</code></pre>
+        </div>
+    </div>
+
+    <!-- Ringkasan & Latihan (slide 15 + Tugas) -->
+    <div class="slide-card">
+        <div class="slide-header"><h2>📌 Ringkasan & Latihan</h2></div>
+        <div class="slide-content">
+            <div class="info-box" style="background:#ecfdf5; border-left-color:#10b981;">
+                <strong>✨ Ringkasan:</strong><br>
+                1. Polimorfisme: objek child dapat diperlakukan sebagai parent.<br>
+                2. Abstract class: template dengan method abstract / concrete.<br>
+                3. Interface: kontrak yang harus diimplementasi (implements).<br>
+                4. Multiple inheritance (implementasi banyak interface) dimungkinkan via <code>implements</code>.
+            </div>
+            <h3>📝 Tugas / Latihan Mandiri</h3>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li>1. Buat abstract/interface class <code>Pekerja</code> dengan method <code>bekerja()</code>. Implementasikan kelas <code>Programmer, Dokter, Guru</code>. Demonstrasi polimorfisme dengan <code>List&lt;Pekerja&gt;</code>.</li>
+                <li>2. Buat class <code>Tablet</code> yang mewarisi (<em>extends</em>) dari <code>Komputer</code> dan mengimplementasikan <code>Kamera</code> & <code>Telepon</code> (multiple interfaces).</li>
+                <li>3. Buat class <code>MathUtils</code> dengan static methods: faktorial, cek bilangan prima, pembulatan double, random integer/double dalam range, rata-rata list, median list.</li>
+            </ul>
+            <hr>
+            <h3>🔥 Challenge: MediaPlayer System</h3>
+            <pre><code>abstract class MediaPlayer { void play(); }
+interface class Playable { void play(); }
+interface class Pausable { void pause(); }
+
+class AudioPlayer implements MediaPlayer, Playable, Pausable {
+  @override void play() => print('Audio diputar');
+  @override void pause() => print('Audio dijeda');
+}
+
+class VideoPlayer implements MediaPlayer, Playable, Pausable {
+  @override void play() => print('Video dimainkan');
+  @override void pause() => print('Video pause');
+}</code></pre>
+            <p>💡 <strong>Implementasikan dan gunakan polimorfisme dengan List&lt;MediaPlayer&gt;</strong> untuk menjalankan play/pause.</p>
+        </div>
+    </div>
+
+    <!-- Static MathUtils extended (solusi contoh kode) -->
+    <div class="slide-card">
+        <div class="slide-header"><h2>🧮 Bonus: Implementasi MathUtils (Static methods)</h2></div>
+        <div class="slide-content">
+            <pre><code>import 'dart:math';
+
+class MathUtils {
+  static int factorial(int n) {
+    if (n &lt; 0) throw ArgumentError('Tidak untuk negatif');
+    return n &lt;= 1 ? 1 : n * factorial(n - 1);
+  }
+  
+  static bool isPrime(int n) {
+    if (n &lt; 2) return false;
+    for (int i = 2; i &lt;= sqrt(n); i++) if (n % i == 0) return false;
+    return true;
+  }
+  
+  static double roundToDecimals(double value, int decimals) {
+    double mod = pow(10, decimals).toDouble();
+    return (value * mod).round() / mod;
+  }
+  
+  static int randomInt(int min, int max) => min + Random().nextInt(max - min + 1);
+  static double randomDouble(double min, double max) => min + Random().nextDouble() * (max - min);
+  
+  static double mean(List&lt;num&gt; numbers) {
+    if (numbers.isEmpty) return 0;
+    return numbers.reduce((a,b) => a + b) / numbers.length;
+  }
+  
+  static double median(List&lt;num&gt; numbers) {
+    if (numbers.isEmpty) return 0;
+    List&lt;num&gt; sorted = List.from(numbers)..sort();
+    int mid = sorted.length ~/ 2;
+    if (sorted.length.isEven) {
+      return (sorted[mid - 1] + sorted[mid]) / 2;
+    }
+    return sorted[mid].toDouble();
+  }
+}
+
+void main() {
+  print(MathUtils.factorial(5));      // 120
+  print(MathUtils.isPrime(17));       // true
+  print(MathUtils.roundToDecimals(3.14159, 2)); // 3.14
+}</code></pre>
+            <div class="footnote">⭐ Gunakan utility class ini untuk menyelesaikan tugas nomor 5 secara lengkap.</div>
+        </div>
+    </div>
+
+    <!-- Contoh Demonstrasi Polimorfisme Pekerja (Latihan 1) -->
+    <div class="slide-card">
+        <div class="slide-header"><h2>👩‍💻 Contoh Solusi: Polimorfisme Pekerja</h2></div>
+        <div class="slide-content">
+            <pre><code>abstract class Pekerja {
+  void bekerja();
+}
+
+class Programmer implements Pekerja {
+  @override void bekerja() => print('💻 Programmer sedang menulis kode Dart...');
+}
+class Dokter implements Pekerja {
+  @override void bekerja() => print('🩺 Dokter memeriksa pasien');
+}
+class Guru implements Pekerja {
+  @override void bekerja() => print('📚 Guru mengajar di kelas');
+}
+
+void main() {
+  List&lt;Pekerja&gt; tim = [Programmer(), Dokter(), Guru()];
+  for (var p in tim) {
+    p.bekerja();
+  }
+}</code></pre>
+            <p>✅ Dengan polimorfisme, kita bisa memperlakukan semua objek sebagai <code>Pekerja</code> dan memanggil method yang sesuai.</p>
+        </div>
+    </div>
+
+    <!-- Pewarisan & Interface Tablet (Multiple) contoh konsep -->
+    <div class="slide-card">
+        <div class="slide-header"><h2>📱 Latihan: Class Tablet (multiple interfaces)</h2></div>
+        <div class="slide-content">
+            <pre><code>class Komputer {
+  void boot() => print('Boot sistem operasi');
+}
+
+interface class Kamera {
+  void ambilFoto() => print('Mengambil foto');
+}
+
+interface class Telepon {
+  void telpon(String nomor) => print('Menelpon $nomor');
+}
+
+class Tablet extends Komputer implements Kamera, Telepon {
+  @override void ambilFoto() => print('Tablet mengambil foto dengan kamera belakang');
+  @override void telpon(String nomor) => print('Tablet melakukan panggilan VoIP ke $nomor');
+  void tampilkanSpesifikasi() {
+    boot();
+    ambilFoto();
+    telpon('08123456789');
+  }
+}</code></pre>
+            <div class="info-box">📌 Dart tidak mendukung multiple inheritance (extends), namun bisa mengimplementasi <strong>banyak interface</strong> (implements) dan mewarisi dari satu class (extends).</div>
+        </div>
+    </div>
+
+    <!-- Penutup/Footer -->
+    <div class="slide-card">
+        <div class="slide-header" style="background: #2d3a4b;"><h2>🏁 Selesai – Siap Praktik OOP</h2></div>
+        <div class="slide-content">
+            <p>✅ Konsep polimorfisme, abstraksi, interface dan static members telah disampaikan berdasarkan slide SESI 4.<br>
+            ✅ Lakukan latihan mandiri, eksplorasi kode Dart, dan implementasikan challenge MediaPlayer untuk pemahaman lebih mendalam.</p>
+            <p style="margin-top: 1rem;">📢 <strong>Referensi</strong>: Materi ini menggabungkan slide asli dengan contoh kode fungsional, memudahkan belajar OOP di Dart / Flutter.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+```
