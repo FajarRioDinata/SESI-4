@@ -196,7 +196,9 @@
             <p>🔹 <strong>Inheritance</strong> menggunakan keyword <code>extends</code><br>
             🔹 <code>super()</code> untuk memanggil constructor parent<br>
             🔹 <code>@override</code> untuk override method</p>
-            <pre><code>class Hewan {  
+            <pre><code>//nama:fajar rio dinata 
+//nim:251410025
+//kelas:SI2Aclass Hewan {  
   void bersuara() => print('...'); 
 }  
 class Kucing extends Hewan {  
@@ -222,7 +224,9 @@ class Kucing extends Hewan {
         <div class="slide-header"><h2>🔄 Slide 3: Polimorfisme dengan Inheritance</h2></div>
         <div class="slide-content">
             <p>📌 Referensi tipe parent dapat menampung objek child.</p>
-            <pre><code>class Bentuk {
+            <pre><code>//nama:fajar rio dinata 
+//nim:251410025
+//kelas:SI2Aclass Bentuk {
 void gambar() => print('Menggambar bentuk');
 }
 class Lingkaran extends Bentuk {
@@ -245,7 +249,7 @@ bentuk2.gambar(); // Output: Menggambar persegi
 
     <!-- SLIDE 5: Keuntungan Polimorfisme (fleksibilitas, extensibility, dll) -->
     <div class="slide-card">
-        <div class="slide-header"><h2>✅ Keuntungan Polimorfisme</h2></div>
+        <div class="slide-header"><h2>✅ Manfaat Polimorfisme</h2></div>
         <div class="slide-content">
             <div class="grid-benefit">
                 <div class="benefit-item">1. Fleksibilitas: Kode bekerja dengan berbagai tipe</div>
@@ -261,7 +265,9 @@ bentuk2.gambar(); // Output: Menggambar persegi
         <div class="slide-header"><h2>🔍 Slide 5: is dan as Operator</h2></div>
         <div class="slide-content">
             <p><strong>is</strong> : Mengecek tipe objek &nbsp;|&nbsp; <strong>as</strong> : Casting tipe objek</p>
-            <pre><code>class Kendaraan {}
+            <pre><code>//nama:fajar rio dinata 
+//nim:251410025
+//kelas:SI2Aclass Kendaraan {}
 class Mobil extends Kendaraan {
 void klakson() => print('Tin!');
 }
@@ -300,7 +306,9 @@ void main() {
         <div class="slide-header"><h2>📦 Slide 8: Abstract Class</h2></div>
         <div class="slide-content">
             <p>🔹 Tidak bisa diinstansiasi langsung.<br>🔹 Dapat memiliki method abstract (tanpa implementasi) dan concrete.</p>
-            <pre><code>abstract class Kendaraan {
+            <pre><code>//nama:fajar rio dinata 
+//nim:251410025
+//kelas:SI2Aabstract class Kendaraan {
   String? merk;  // Field concrete
   
   void start();  // Method abstract
@@ -324,7 +332,9 @@ class Mobil extends Kendaraan {
         <div class="slide-header"><h2>🎵 Slide 9: Abstract Method</h2></div>
         <div class="slide-content">
             <p>Method tanpa body, harus di-override di subclass.</p>
-            <pre><code>abstract class AlatMusik {
+            <pre><code>//nama:fajar rio dinata 
+//nim:251410025
+//kelas:SI2Aabstract class AlatMusik {
   void mainkan(); // Abstract method
 
   void info() {
@@ -347,7 +357,9 @@ class Gitar extends AlatMusik {
         <div class="slide-header"><h2>🔌 Slide 10: Interface di Dart</h2></div>
         <div class="slide-content">
             <p>Sejak Dart 3.0: <code>interface class</code>. Gunakan <code>implements</code> untuk mengimplementasi kontrak.</p>
-            <pre><code>interface class Flyable {
+            <pre><code>//nama:fajar rio dinata 
+//nim:251410025
+//kelas:SI2Ainterface class Flyable {
   void terbang() => print('Terbang...');
 }
 
@@ -384,7 +396,9 @@ class Plane implements Flyable {
         <div class="slide-header"><h2>⚙️ Slide 12: Static Members dan Method</h2></div>
         <div class="slide-content">
             <p>Static member adalah properti/method milik class itu sendiri, diakses via nama class. Berguna untuk utility class.</p>
-            <pre><code>class MathUtils {
+            <pre><code>//nama:fajar rio dinata 
+//nim:251410025
+//kelas:SI2Aclass MathUtils {
 static double pi = 3.14;
 static int add(int x, int y) {
 return x + y;
@@ -402,8 +416,10 @@ print('Result : ${MathUtils.add(10, 20)}');
      <div class="slide-card">
         <div class="slide-header"><h2>⚙️ Slide 13: Praktik 2 - Sistem Pembayaran</h2></div>
         <div class="slide-content">
-            <p>Static member adalah properti/method milik class itu sendiri, diakses via nama class. Berguna untuk utility class.</p>
-            <pre><code>abstract class MetodePembayaran {
+            <p></p>
+            <pre><code>//nama:fajar rio dinata 
+//nim:251410025
+//kelas:SI2Aabstract class MetodePembayaran {
   void bayar(double jumlah);
 }
 
@@ -426,7 +442,9 @@ class EWallet implements MetodePembayaran {
     <div class="slide-card">
         <div class="slide-header"><h2>📐 Slide 14: Studi Kasus – Sistem Bentuk Geometri</h2></div>
         <div class="slide-content">
-            <pre><code>abstract class Bentuk {
+            <pre><code>//nama:fajar rio dinata 
+//nim:251410025
+//kelas:SI2A abstract class Bentuk {
   double hitungLuas();
   double hitungKeliling();
   
@@ -498,7 +516,9 @@ class Lingkaran implements Bentuk {
             • Abstract class: <code>MediaPlayer</code><br>
             • Interface: <code>Playable</code>, <code>Pausable</code><br>
             • Class implementasi: <code>AudioPlayer</code>, <code>VideoPlayer</code></p>
-            <pre><code>abstract class MediaPlayer { void play(); }
+            <pre><code>//nama:fajar rio dinata 
+//nim:251410025
+//kelas:SI2A abstract class MediaPlayer { void play(); }
 interface class Playable { void play(); }
 interface class Pausable { void pause(); }
 
@@ -526,7 +546,9 @@ void main() {
     <div class="slide-card">
         <div class="slide-header"><h2>🧩 Solusi Latihan: Pekerja (Polimorfisme)</h2></div>
         <div class="slide-content">
-            <pre><code>abstract class Pekerja {
+            <pre><code>//nama:fajar rio dinata 
+//nim:251410025
+//kelas:SI2A abstract class Pekerja {
   void bekerja();
 }
 
@@ -551,7 +573,9 @@ void main() {
     <div class="slide-card">
         <div class="slide-header"><h2>📱 Tablet: Mewarisi Komputer & mengimplementasi Kamera, Telepon</h2></div>
         <div class="slide-content">
-            <pre><code>class Komputer {
+            <pre><code>//nama:fajar rio dinata 
+//nim:251410025
+//kelas:SI2A class Komputer {
   void boot() => print('Booting system...');
 }
 interface class Kamera {
