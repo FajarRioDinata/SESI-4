@@ -1,5 +1,4 @@
-Berikut adalah kode HTML yang menampilkan seluruh materi slide "Polimorfisme dan Abstraksi" secara berurutan dan lengkap sesuai dengan isi slide yang diberikan.
-```html
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -224,24 +223,22 @@ class Kucing extends Hewan {
         <div class="slide-content">
             <p>📌 Referensi tipe parent dapat menampung objek child.</p>
             <pre><code>class Bentuk {
-  void gambar() => print('Menggambar bentuk');
+void gambar() => print('Menggambar bentuk');
 }
-
 class Lingkaran extends Bentuk {
-  @override
-  void gambar() => print('Menggambar lingkaran');
+@override
+void gambar() => print('Menggambar lingkaran');
 }
-
 class Persegi extends Bentuk {
-  @override
-  void gambar() => print('Menggambar persegi');
+@override
+void gambar() => print('Menggambar persegi');
 }
-
 void main() {
-  Bentuk bentuk1 = Lingkaran(); // Polimorfisme
-  Bentuk bentuk2 = Persegi();   // Polimorfisme
-  bentuk1.gambar(); // Output: Menggambar lingkaran
-  bentuk2.gambar(); // Output: Menggambar persegi
+Bentuk bentuk1 = Lingkaran(); // Polimorfisme
+Bentuk bentuk2 = Persegi();
+// Polimorfisme
+bentuk1.gambar(); // Output: Menggambar lingkaran
+bentuk2.gambar(); // Output: Menggambar persegi
 }</code></pre>
         </div>
     </div>
@@ -266,18 +263,17 @@ void main() {
             <p><strong>is</strong> : Mengecek tipe objek &nbsp;|&nbsp; <strong>as</strong> : Casting tipe objek</p>
             <pre><code>class Kendaraan {}
 class Mobil extends Kendaraan {
-  void klakson() => print('Tin!');
+void klakson() => print('Tin!');
 }
-
 void main() {
-  Kendaraan k = Mobil();
-
-  if (k is Mobil) {          // Cek tipe
-    (k as Mobil).klakson();  // Casting
-  }
-  
-  // Safe casting dengan as? (Dart 2.15+)
-  (k as? Mobil)?.klakson();
+Kendaraan k = Mobil();
+if (k is Mobil) {
+(k as Mobil).klakson();
+}
+// Cek tipe
+// Casting
+// Safe casting dengan as?
+(k as Mobil?)?.klakson();
 }</code></pre>
         </div>
     </div>
@@ -305,9 +301,11 @@ void main() {
         <div class="slide-content">
             <p>🔹 Tidak bisa diinstansiasi langsung.<br>🔹 Dapat memiliki method abstract (tanpa implementasi) dan concrete.</p>
             <pre><code>abstract class Kendaraan {
-  String? merk;   // Field concrete
-  void start();   // Method abstract
-  void stop() {   // Method concrete
+  String? merk;  // Field concrete
+  
+  void start();  // Method abstract
+  
+  void stop() {  // Method concrete
     print('Kendaraan berhenti');
   }
 }
@@ -327,8 +325,10 @@ class Mobil extends Kendaraan {
         <div class="slide-content">
             <p>Method tanpa body, harus di-override di subclass.</p>
             <pre><code>abstract class AlatMusik {
-  void mainkan();   // Abstract method
-  void info() {     // Concrete method
+  void mainkan(); // Abstract method
+
+  void info() {
+    // Concrete method
     print('Ini adalah alat musik');
   }
 }
@@ -385,21 +385,43 @@ class Plane implements Flyable {
         <div class="slide-content">
             <p>Static member adalah properti/method milik class itu sendiri, diakses via nama class. Berguna untuk utility class.</p>
             <pre><code>class MathUtils {
-  static double pi = 3.14;
-  static int add(int x, int y) {
-    return x + y;
-  }
+static double pi = 3.14;
+static int add(int x, int y) {
+return x + y;
 }
-
+}
 void main() {
-  print('Nilai pi : ${MathUtils.pi}');
-  print('Result : ${MathUtils.add(10, 20)}');
+print('Nilai pi : ${MathUtils.pi}');
+print('Result : ${MathUtils.add(10, 20)}');
 }</code></pre>
             <div class="info-box">💡 Catatan: Pada contoh asli slide terdapat typo <code>Mathutils</code>, pastikan menggunakan <code>MathUtils</code> (case-sensitive).</div>
         </div>
     </div>
 
     <!-- SLIDE 13: ( tidak ada konten penting dari halaman 10, dilewati sesuai slide asli) Namun kita lanjut ke Studi Kasus Bentuk Geometri (Slide 14) -->
+     <div class="slide-card">
+        <div class="slide-header"><h2>⚙️ Slide 13: Praktik 2 - Sistem Pembayaran</h2></div>
+        <div class="slide-content">
+            <p>Static member adalah properti/method milik class itu sendiri, diakses via nama class. Berguna untuk utility class.</p>
+            <pre><code>abstract class MetodePembayaran {
+  void bayar(double jumlah);
+}
+
+class KartuKredit implements MetodePembayaran {
+  @override
+  void bayar(double jumlah) {
+    print('Bayar $jumlah dengan Kartu Kredit');
+  }
+}
+
+class EWallet implements MetodePembayaran {
+  @override
+  void bayar(double jumlah) {
+    print('Bayar $jumlah dengan E-Wallet');
+  }
+}</code></pre>
+        </div>
+    </div>
     <!-- SLIDE 14: Studi Kasus Sistem Bentuk Geometri -->
     <div class="slide-card">
         <div class="slide-header"><h2>📐 Slide 14: Studi Kasus – Sistem Bentuk Geometri</h2></div>
@@ -407,6 +429,7 @@ void main() {
             <pre><code>abstract class Bentuk {
   double hitungLuas();
   double hitungKeliling();
+  
   void info() {
     print('Luas: ${hitungLuas()}, Keliling: ${hitungKeliling()}');
   }
@@ -415,9 +438,15 @@ void main() {
 class Persegi implements Bentuk {
   double sisi;
   Persegi(this.sisi);
-  @override double hitungLuas() => sisi * sisi;
-  @override double hitungKeliling() => 4 * sisi;
-  @override void info() {
+  
+  @override
+  double hitungLuas() => sisi * sisi;
+  
+  @override
+  double hitungKeliling() => 4 * sisi;
+
+  @override
+  void info() {
     print('Persegi dengan sisi ${sisi} memiliki luas ${hitungLuas()} dan keliling ${hitungKeliling()}.');
   }
 }
@@ -425,9 +454,15 @@ class Persegi implements Bentuk {
 class Lingkaran implements Bentuk {
   double radius;
   Lingkaran(this.radius);
-  @override double hitungLuas() => 3.14 * radius * radius;
-  @override double hitungKeliling() => 2 * 3.14 * radius;
-  @override void info() {
+  
+  @override
+  double hitungLuas() => 3.14 * radius * radius;
+  
+  @override
+  double hitungKeliling() => 2 * 3.14 * radius;
+
+  @override
+  void info() {
     print('Lingkaran dengan radius ${radius} memiliki luas ${hitungLuas()} dan keliling ${hitungKeliling()}.');
   }
 }</code></pre>
